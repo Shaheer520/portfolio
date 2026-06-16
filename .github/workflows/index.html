@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHAHEER | Elite Visual Architect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <style>
+        :root {
+            --accent: #00f2ff;
+            --accent-2: #7000ff;
+            --bg-dark: #050505;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Moving Background Gradient Animation */
+        .mesh-bg {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -2;
+            background: linear-gradient(45deg, #050505, #0a0a2e, #1a0033, #050505);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .luxury-font {
+            font-family: 'Syne', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(45deg, var(--accent), var(--accent-2));
+        }
+
+        .skill-bar-bg {
+            background: rgba(255, 255, 255, 0.1);
+            height: 12px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            border-radius: 10px;
+            width: 0%;
+            transition: width 1.5s cubic-bezier(0.1, 0, 0.2, 1);
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            box-shadow: 0 0 15px var(--accent);
+        }
+
+        .video-container {
+            position: relative;
+            aspect-ratio: 9/16;
+            background: #111;
+            border-radius: 30px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.4s ease;
+            flex: 0 0 auto;
+            width: 300px;
+        }
+        
+        .video-container:hover {
+            border-color: var(--accent);
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Horizontal Scroll Snap Slider */
+        .reels-slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 30px;
+            padding: 20px 0;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none; /* Firefox */
+        }
+        .reels-slider::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+        .reels-slider .video-container {
+            scroll-snap-align: center;
+        }
+
+        .luxury-btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .luxury-btn:after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        .luxury-btn:hover:after {
+            left: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mesh-bg"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 px-6 py-6 flex justify-between items-center">
+        <div class="text-2xl luxury-font font-extrabold tracking-tighter">
+            SHA<span class="text-cyan-400">HEER</span>
+        </div>
+        <div class="hidden md:flex space-x-10 text-xs luxury-font tracking-widest font-bold">
+            <a href="#work" class="hover:text-cyan-400 transition">Work</a>
+            <a href="#skills" class="hover:text-cyan-400 transition">Skills</a>
+            <a href="#about" class="hover:text-cyan-400 transition">About</a>
+            <a href="#contact" class="bg-white text-black px-5 py-2 rounded-full font-bold hover:bg-cyan-400 transition">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 relative">
+        <h2 class="text-cyan-400 luxury-font text-sm tracking-[0.6em] mb-6 opacity-80" data-aos="fade-down">Visual Architect</h2>
+        <h1 class="text-6xl md:text-9xl font-black luxury-font leading-none mb-8 tracking-tighter" data-aos="zoom-in" data-aos-delay="200">
+            CRAFTING <br> <span class="gradient-text">ELITE</span> CONTENT
+        </h1>
+        <p class="max-w-2xl text-slate-400 text-lg mb-10 leading-relaxed" data-aos="fade-up" data-aos-delay="400">
+            Elevating brands through cinematic storytelling and high-retention visual strategies. Turning visions into digital masterpieces.
+        </p>
+        <div class="flex flex-col md:flex-row gap-6" data-aos="fade-up" data-aos-delay="600">
+            <a href="#work" class="gradient-bg text-white px-10 py-4 rounded-full font-bold text-sm luxury-font luxury-btn hover:scale-105 transition-transform shadow-xl shadow-cyan-500/20">
+                Explore Reel
+            </a>
+            <a href="#contact" class="glass text-white px-10 py-4 rounded-full font-bold text-sm luxury-font hover:bg-white/10 transition-all">
+                Let's Collaborate
+            </a>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div data-aos="fade-right">
+                    <h3 class="luxury-font text-4xl font-bold">The <span class="text-cyan-400">Showreel</span></h3>
+                    <p class="text-slate-400 mt-2">A collection of high-impact visual experiences.</p>
+                </div>
+                <div class="text-sm luxury-font text-slate-500 italic border-l-2 border-cyan-400 pl-4" data-aos="fade-left">
+                    Swipe to Explore $\rightarrow$
+                </div>
+            </div>
+            
+            <div class="reels-slider" data-aos="fade-up">
+                <!-- Video 1 -->
+                <div class="video-container group cursor-pointer">
+                    <div class="absolute bottom-0 left-0 p-6 z-20">
+                        <p class="text-xs luxury-font text-cyan-400 mb-1">Cinematic</p>
+                        <h5 class="text-lg font-bold">Urban Flow</h5>
+                    </div>
+                    <video src="/short reels/video1.mp4" autoplay loop muted playsinline controls></video>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="video-container group cursor-pointer">
+                    <div class="absolute bottom-0 left-0 p-6 z-20">
+                        <p class="text-xs luxury-font text-purple-400 mb-1">Podcast</p>
+                        <h5 class="text-lg font-bold">Mental Shift</h5>
+                    </div>
+                    <video src="/short reels/video2.mp4" autoplay loop muted playsinline controls></video>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="video-container group cursor-pointer">
+                    <div class="absolute bottom-0 left-0 p-6 z-20">
+                        <p class="text-xs luxury-font text-pink-400 mb-1">Commercial</p>
+                        <h5 class="text-lg font-bold">Product Luxury</h5>
+                    </div>
+                    <video src="/short reels/video3.mp4" autoplay loop muted playsinline controls></video>
+                </div>
+                <!-- Video 4 -->
+                <div class="video-container group cursor-pointer">
+                    <div class="absolute bottom-0 left-0 p-6 z-20">
+                        <p class="text-xs luxury-font text-pink-400 mb-1">Commercial</p>
+                        <h5 class="text-lg font-bold">Product Luxury</h5>
+                    </div>
+                    <video src="/short reels/video4.mp4" autoplay loop muted playsinline controls></video>
+                </div>
+                <!-- Video 5 -->
+                <div class="video-container group cursor-pointer">
+                    <div class="absolute bottom-0 left-0 p-6 z-20">
+                        <p class="text-xs luxury-font text-pink-400 mb-1">Commercial</p>
+                        <h5 class="text-lg font-bold">Product Luxury</h5>
+                    </div>
+                    <video src="short reels/video5.mp4" autoplay loop muted playsinline controls></video>
+                </div>
+                <!-- Video 6 -->
+                <div class="video-container group cursor-pointer">
+                    <div class="absolute bottom-0 left-0 p-6 z-20">
+                        <p class="text-xs luxury-font text-pink-400 mb-1">Commercial</p>
+                        <h5 class="text-lg font-bold">Product Luxury</h5>
+                    </div>
+                    <video src="short reels/video6.mp4" autoplay loop muted playsinline controls></video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h3 class="luxury-font text-4xl font-bold mb-4">The <span class="text-cyan-400">Toolbox</span></h3>
+                <p class="text-slate-400">Mastery of industry-standard creative tools.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-1 gap-12">
+                <!-- Premiere Pro -->
+                <div class="flex flex-col space-y-4" data-aos="fade-right">
+                    <div class="flex justify-between items-center mb-2">
+                        <div class="flex items-center space-x-4">
+                            <img src="/software logo/premiere-logo.png" alt="PR" class="w-10 h-10 object-contain" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5968/5968517.png'">
+                            <span class="luxury-font font-bold text-xl">Adobe Premiere Pro</span>
+                        </div>
+                        <span class="font-bold text-cyan-400">80%</span>
+                    </div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" data-width="80%"></div>
+                    </div>
+                </div>
+
+                <!-- After Effects -->
+                <div class="flex flex-col space-y-4" data-aos="fade-right" data-aos-delay="100">
+                    <div class="flex justify-between items-center mb-2">
+                        <div class="flex items-center space-x-4">
+                            <img src="/software logo/ae-logo.png" alt="AE" class="w-10 h-10 object-contain" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5968/5968617.png'">
+                            <span class="luxury-font font-bold text-xl">Adobe After Effects</span>
+                        </div>
+                        <span class="font-bold text-cyan-400">80%</span>
+                    </div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" data-width="80%"></div>
+                    </div>
+                </div>
+
+                <!-- CapCut -->
+                <div class="flex flex-col space-y-4" data-aos="fade-right" data-aos-delay="200">
+                    <div class="flex justify-between items-center space-x-4">
+                        <img src="/software logo/capcut-logo.png" alt="CC" class="w-10 h-10 object-contain" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10522/10522414.png'" border="rounded-5">
+                        <span class="luxury-font font-bold text-xl">CapCut Pro</span>
+                        <span class="font-bold text-cyan-400 ml-auto">90%</span>
+                    </div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" data-width="90%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 px-6 bg-white/5">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="glass p-12 rounded-[40px] relative border-t-4 border-t-cyan-400" data-aos="zoom-in">
+                <h3 class="luxury-font text-3xl font-bold mb-6">The <span class="text-cyan-400">Architect</span></h3>
+                <p class="text-xl leading-relaxed text-slate-300 mb-8">
+                    I'm <span class="text-white font-bold">Shaheer</span>. I specialize in the art of <strong>Attention</strong>. With <span class="text-cyan-400 font-bold">3 years of professional editing</span> and academic training at <span class="text-white font-bold">Ali Ghar Institute of Technology</span>, I blend technical precision with cinematic intuition.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="px-6 py-2 bg-white/10 rounded-full text-xs luxury-font border border-white/20">Adobe Premiere Pro</span>
+                    <span class="px-6 py-2 bg-white/10 rounded-full text-xs luxury-font border border-white/20">After Effects VFX</span>
+                    <span class="px-6 py-2 bg-white/10 rounded-full text-xs luxury-font border border-white/20">CapCut Master</span>
+                    <span class="px-6 py-2 bg-white/10 rounded-full text-xs luxury-font border border-white/20">Viral Storytelling</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6 relative">
+        <div class="max-w-3xl mx-auto text-center">
+            <h3 class="luxury-font text-4xl md-text-6xl mb-12 leading-tight" data-aos="fade-up">Ready to <br> <span class="gradient-text">Go Elite?</span></h3>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8" data-aos="fade-up" data-aos-delay="200">
+                <a href="/cdn-cgi/l/email-protection#651c0a1017480008040c09250208040c094b060a08" class="glass px-8 py-4 rounded-full flex items-center space-x-3 hover:bg-white hover:text-black transition-all duration-300 group luxury-font text-sm">
+                    <i class="fa-solid fa-envelope text-cyan-400 group-hover:text-black"></i>
+                    <span class="font-bold">Email Me</span>
+                }
+                </a>
+                <a href="https://wa.me/yournumber" class="glass px-8 py-4 rounded-full flex items-center space-x-3 hover:bg-white hover:text-black transition-all duration-300 group luxury-font text-sm">
+                    <i class="fa-brands fa-whatsapp text-green-400 group-hover:text-black"></i>
+                    <span class="font-bold">WhatsApp Now</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-slate-600 text-xs luxury-font tracking-widest">
+        &copy; 2026 SHAHEER EDITZ // ELITE VISUAL ARCHITECT
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+
+        window.addEventListener('scroll', () => {
+            const skillBars = document.querySelectorAll('.skill-bar-fill');
+            skillBars.forEach(bar => {
+                const rect = bar.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    bar.style.width = bar.getAttribute('data-width');
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0c990927d2be2f0',t:'MTc4MTYxMDI4OQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
